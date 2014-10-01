@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<title>Pure CSS Dropdown Menus</title>
+	<style type="text/css">
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{
+	margin:0;
+	padding:0;
+}
+
+#nav{
+	list-style:none;
+	font-weight:bold;
+	margin-bottom:10px;
+	float:right;
+	width:100%;
+}
+
+#nav li{
+	float:left;
+	margin-right:10px;
+	position:relative;
+}
+#nav a{
+	display:block;
+	padding:5px;
+	left:-20px;
+	width:100%;
+	color:#000;
+	background:skyblue;
+	text-decoration:none;
+}
+#nav a:hover{
+	color:#000;
+	text-decoration:underline;
+}
+
+/*--- DROPDOWN ---*/
+#nav ul{
+	background:#fff; /* Adding a background makes the dropdown work properly in IE7+. Make this as close to your page's background as possible (i.e. white page == white background). */
+	background:rgba(255,255,255,0); /* But! Let's make the background fully transparent where we can, we don't actually want to see it if we can help it... */
+	list-style:none;
+	border:1px solid black;
+	position:absolute;
+	left:-9999px; /* Hide off-screen when not needed (this is more accessible than display:none;) */
+}
+#nav ul li{
+	padding-top:0px; /* Introducing a padding between the li and the a give the illusion spaced items */
+	float:none;
+}
+#nav ul a{
+	white-space:nowrap; /* Stop text wrapping and creating multi-line dropdown items */
+}
+#nav li:hover ul{ /* Display the dropdown on hover */
+	left:0; /* Bring back on-screen when needed */
+}
+#nav li:hover a{ /* These create persistent hover states, meaning the top-most link stays 'hovered' even when your cursor has moved down the list. */
+	background:cadetblue;
+	text-decoration:underline;
+}
+#nav li:hover ul a{ /* The persistent hover state does however create a global style for links even before they're hovered. Here we undo these effects. */
+	text-decoration:none;
+}
+#nav li:hover ul li a:hover{ /* Here we define the most explicit hover states--what happens when you hover each individual link. */
+	background:#FFF;
+}
+	</style>
+</head>
+<body>
+	<ul id="nav">
+		<li>
+			<a href="#" title="Return home">Home</a>
+
+		</li>
+		<li>
+			<a href="#" title="About the company"><img src='new_arrow.png'></a>
+			<ul>
+				<li><a href="#">The product</a></li>
+				<li><a href="#">Meet the team</a></li>
+			</ul>
+
+		</li>
+		<li>
+			<a href="#" title="The services we offer">Services</a>
+			<ul>
+				<li><a href="#">Sevice one</a></li>
+				<li><a href="#">Sevice two</a></li>
+				<li><a href="#">Sevice three</a></li>
+
+				<li><a href="#">Sevice four</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#" title="Our product range">Product</a>
+			<ul>
+				<li><a href="#">Small product (one)</a></li>
+
+				<li><a href="#">Small product (two)</a></li>
+				<li><a href="#">Small product (three)</a></li>
+				<li><a href="#">Small product (four)</a></li>
+				<li><a href="#">Big product (five)</a></li>
+				<li><a href="#">Big product (six)</a></li>
+				<li><a href="#">Big product (seven)</a></li>
+
+				<li><a href="#">Big product (eight)</a></li>
+				<li><a href="#">Enourmous product (nine)</a></li>
+				<li><a href="#">Enourmous product (ten)</a></li>
+				<li><a href="#">Enourmous product (eleven)</a></li>
+			</ul>
+		</li>
+		<li>
+
+			<a href="#" title="Get in touch with us">Contact</a>
+			<ul>
+				<li><a href="#">Out-of-hours</a></li>
+				<li><a href="#">Directions</a></li>
+			</ul>
+		</li>
+	</ul>
+</body>
+</html>
