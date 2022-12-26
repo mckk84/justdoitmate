@@ -1,4 +1,5 @@
 justdoitmate
 ============
 
-task list application
+Todo application
+Code Igniter
